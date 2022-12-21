@@ -1,0 +1,13 @@
+[{
+  "modid": "gcyb",
+  "name": "Gregicality Biology",
+  "description": "Biological (also scientific) module of Gregicality.",
+  "version": "0.0.1-alpha",
+  "mcversion": "1.12.2-14.23.5.2847",
+  "logoFile": "assets/gcyb/textures/gcyb_logo.png",
+  "authorList": [
+      "BioAstroiner"
+  ],
+  "credits": "GregoriusT for making GregTech and textures, various GT community members and the Gregtech CEu Dev Team for help in development.",
+  "dependencies": ["codechickenlib", "gregtech", "gcym", "gcys"]
+}]

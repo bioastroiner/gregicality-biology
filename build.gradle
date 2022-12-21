@@ -1,0 +1,124 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = "http://maven.minecraftforge.net/" }
+    }
+    dependencies {
+        classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.12.2-0.0.1"
+group = "gregicality"
+archivesBaseName = "GregicalityBiology"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2847"
+    runDir = "run"
+    mappings = "stable_39"
+    makeObfSourceJar = false
+    replace("@VERSION@", project.version)
+    replaceIn("GregicalityBiology.java")
+}
+
+
+jar {
+    manifest {
+        // attributes 'FMLAT': 'gttnf_at.cfg'
+    }
+}
+
+repositories {
+    maven {
+        url "http://maven.shadowfacts.net/"
+    }
+    maven {
+        name = "OpenComputers"
+        url = "https://maven.cil.li/"
+    }
+    maven {
+        url "http://maven.k-4u.nl"
+    }
+    maven {
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
+    maven {
+        name = "progwml6"
+        url = "http://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "blamejared"
+        url = "http://maven.blamejared.com/"
+    }
+    maven {
+        name = "CCL Maven"
+        url = "http://chickenbones.net/maven/"
+    }
+    maven {
+        name = "CyclopsMC"
+        url = "https://oss.jfrog.org/artifactory/simple/libs-release/"
+    }
+    maven {
+        name 'tterrag Maven'
+        url "https://maven.tterrag.com/"
+    }
+    maven {
+        name = "mcmoddev"
+        url = "https://maven.mcmoddev.com"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+    maven {
+        url = "https://www.cursemaven.com"
+    }
+    maven {
+        url "http://www.ryanliptak.com/maven/"
+    }}
+
+dependencies {
+    //deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.554"
+    deobfCompile "mezz.jei:jei_1.12.2:+"
+    //deobfCompile "curse.maven:gregtechceu-557242:3612824"
+    deobfCompile "team.chisel.ctm:CTM:MC${project.minecraft.version}-1.0.2.31"
+    //provided files("libs/gregicality-1.12.2-0.23.1.jar")
+    deobfCompile "codechicken:ChickenASM:1.12-1.0.2.9"
+    deobfCompile "codechicken-lib-1-8:CodeChickenLib-${project.minecraft.version}:3.2.3.358:universal"
+    deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17"
+
+    deobfCompile "applecore:AppleCore:${project.minecraft.version}-3.1.5:deobf"
+
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+
+    //rename("(.+_at.cfg)", "META-INF/1")
+}
+
+runClient {
+    jvmArgs "-Xmx3G"
+}
+
+
+
+
