@@ -2,7 +2,7 @@ package gregicality.biology.loaders.recipe;
 
 import gregicality.biology.api.unification.GCYBMaterials;
 import gregicality.biology.common.block.GCYBMetaBlocks;
-import gregicality.biology.common.block.blocks.BioCasing;
+import gregicality.biology.common.block.blocks.LabWall;
 import gregtech.api.GregTechAPI;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.RecipeMaps;
@@ -21,7 +21,7 @@ public class BioCasingLoader {
                 .input(OrePrefix.plate, Materials.CobaltBrass, 8)
                 .input(OrePrefix.plate, Materials.BismuthBronze, 4)
                 .fluidInputs(GregTechAPI.MaterialRegistry.get("polystyrene_sulfonate").getFluid(2304))
-                .outputs(GCYBMetaBlocks.BIO_CASING.getItemVariant(BioCasing.BioCasingType.BIO1, 8))
+                .outputs(GCYBMetaBlocks.labWall.getItemVariant(LabWall.LabWallType.SAFE, 8))
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
@@ -31,7 +31,7 @@ public class BioCasingLoader {
                 .input(OrePrefix.plate, Materials.CobaltBrass, 8)
                 .input(OrePrefix.plate, Materials.BismuthBronze, 4)
                 .fluidInputs(GregTechAPI.MaterialRegistry.get("polystyrene_sulfonate").getFluid(2880))
-                .outputs(GCYBMetaBlocks.BIO_CASING.getItemVariant(BioCasing.BioCasingType.BIO1, 10))
+                .outputs(GCYBMetaBlocks.labWall.getItemVariant(LabWall.LabWallType.SAFE, 10))
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -45,7 +45,7 @@ public class BioCasingLoader {
                 .input(OrePrefix.foil, Materials.Silver, 24)
                 .input(OrePrefix.plateDouble, GregTechAPI.MaterialRegistry.get("polystyrene_sulfonate"), 32)
                 .fluidInputs(GCYBMaterials.Cuproquin.getFluid(100))
-                .outputs(GCYBMetaBlocks.BIO_CASING.getItemVariant(BioCasing.BioCasingType.BIO2, 8))
+                .outputs(GCYBMetaBlocks.labWall.getItemVariant(LabWall.LabWallType.NORMAL, 8))
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -58,7 +58,7 @@ public class BioCasingLoader {
                 .input(MetaItems.BLACKLIGHT)
                 .input(OrePrefix.plateDouble, GregTechAPI.MaterialRegistry.get("polystyrene_sulfonate"), 64)
                 .fluidInputs(GCYBMaterials.Cuproquin.getFluid(2000))
-                .outputs(GCYBMetaBlocks.BIO_CASING.getItemVariant(BioCasing.BioCasingType.BIO3, 64))
+                .outputs(GCYBMetaBlocks.labWall.getItemVariant(LabWall.LabWallType.HAZARD, 64))
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
     }

@@ -25,7 +25,13 @@ public class CommonProxy {
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         GCYBMetaItems.initSubitems();
         IForgeRegistry<Item> registry = event.getRegistry();
-        registry.register(createItemBlock(GCYBMetaBlocks.BIO_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYBMetaBlocks.labWall, VariantItemBlock::new));
+    }
+
+    @SubscribeEvent
+    public static void registerBlocks(RegistryEvent.Register<Block> event){
+        IForgeRegistry<Block> registry = event.getRegistry();
+        registry.register(GCYBMetaBlocks.labWall);
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
@@ -36,10 +42,6 @@ public class CommonProxy {
 
     @SubscribeEvent()
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-
-        // Main recipe registration
-        // This is called AFTER GregTech registers recipes, so
-        // anything here is safe to call removals in
         GCYBRecipeLoader.init();
     }
 

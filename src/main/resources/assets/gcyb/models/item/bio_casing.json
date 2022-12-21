@@ -11,19 +11,19 @@
       "bio1": {
         "model": "minecraft:cube_all",
         "textures": {
-          "all": "gregtech:blocks/casings/bio/1"
+          "all": "gcyb:blocks/casings/bio/1"
         }
       },
       "bio2": {
         "model": "minecraft:cube_all",
         "textures": {
-          "all": "gregtech:blocks/casings/bio/2"
+          "all": "gcyb:blocks/casings/bio/2"
         }
       },
       "bio3": {
         "model": "minecraft:cube_all",
         "textures": {
-          "all": "gregtech:blocks/casings/bio/3"
+          "all": "gcyb:blocks/casings/bio/3"
         }
       }
     }
