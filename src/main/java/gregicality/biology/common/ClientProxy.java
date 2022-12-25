@@ -1,6 +1,8 @@
 package gregicality.biology.common;
 
-import gregicality.biology.common.block.GCYBMetaBlocks;
+import gregicality.biology.common.blocks.GCYBMetaBlocks;
+import gregicality.biology.common.items.GCYBMetaItems;
+import gregicality.biology.common.items.MicrobeItem;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

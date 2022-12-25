@@ -33,5 +33,6 @@ public class GCYBMaterials {
                         Materials.Hydrogen,7,
                         Materials.Nitrogen,1)
                 .build();
+
     }
 }

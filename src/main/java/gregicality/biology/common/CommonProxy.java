@@ -1,8 +1,8 @@
 package gregicality.biology.common;
 
 import gregicality.biology.GregicalityBiology;
-import gregicality.biology.common.block.GCYBMetaBlocks;
-import gregicality.biology.common.item.GCYBMetaItems;
+import gregicality.biology.common.blocks.GCYBMetaBlocks;
+import gregicality.biology.common.items.GCYBMetaItems;
 import gregicality.biology.loaders.recipe.GCYBRecipeLoader;
 import gregtech.api.block.VariantItemBlock;
 import net.minecraft.block.Block;

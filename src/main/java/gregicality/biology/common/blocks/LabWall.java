@@ -1,4 +1,4 @@
-package gregicality.biology.common.block.blocks;
+package gregicality.biology.common.blocks;
 
 import gregtech.api.block.VariantBlock;
 import net.minecraft.block.SoundType;

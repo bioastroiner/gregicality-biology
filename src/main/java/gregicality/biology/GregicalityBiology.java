@@ -1,8 +1,8 @@
 package gregicality.biology;
 
 import gregicality.biology.common.CommonProxy;
-import gregicality.biology.common.block.GCYBMetaBlocks;
-import gregicality.biology.common.item.GCYBMetaItems;
+import gregicality.biology.common.blocks.GCYBMetaBlocks;
+import gregicality.biology.common.items.GCYBMetaItems;
 import gregicality.biology.common.metatileentities.GCYBMetaTileEntities;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;

@@ -1,8 +1,8 @@
 package gregicality.biology.loaders.recipe;
 
 import gregicality.biology.api.unification.GCYBMaterials;
-import gregicality.biology.common.block.GCYBMetaBlocks;
-import gregicality.biology.common.block.blocks.LabWall;
+import gregicality.biology.common.blocks.GCYBMetaBlocks;
+import gregicality.biology.common.blocks.LabWall;
 import gregtech.api.GregTechAPI;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.RecipeMaps;
@@ -11,7 +11,7 @@ import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 
-public class BioCasingLoader {
+public class LabCasingLoader {
     public static void init() {
         /*  Tier 1 Bio Casing  */
         RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
