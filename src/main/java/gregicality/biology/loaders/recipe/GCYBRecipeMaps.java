@@ -7,7 +7,7 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.sound.GTSounds;
 
 public class GCYBRecipeMaps {
-    public static final RecipeMap<SimpleRecipeBuilder> MICROSCOPE_RECIPES = new RecipeMap<>("microscope",1,2,1,4,1,1,1,1,new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> MICROSCOPE_RECIPES = new RecipeMap<>("microscope", 1, 2, 1, 4, 1, 1, 1, 1, new SimpleRecipeBuilder(), false)
             .setSound(GTSounds.ELECTROLYZER)
             .setProgressBar(GCYSGuiTextures.PROGRESS_BAR_NANOSCALE, ProgressWidget.MoveType.CIRCULAR);
 }

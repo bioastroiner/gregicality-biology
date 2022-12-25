@@ -91,7 +91,7 @@ public class MicrobeItem extends StandardMetaItem {
                 if (!alreadyRegistered.containsKey(registrationKey)) {
                     prefix.materialIconType.getItemModelPath(materialIconSet);
                     ResourceLocation resourceLocation = prefix.materialIconType.getItemModelPath(materialIconSet);
-                    ModelBakery.registerItemVariants(this, new ResourceLocation[]{resourceLocation});
+                    ModelBakery.registerItemVariants(this, resourceLocation);
                     alreadyRegistered.put(registrationKey, new ModelResourceLocation(resourceLocation, "inventory"));
                 }
 

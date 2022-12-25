@@ -14,24 +14,25 @@ public class GCYBMaterials {
     // and adding anhydrous cupric sulfate to react to obtain the copper 8-hydroxyquinoline.
     public static Material Cuproquin;
     public static Material Quinoline;
-    public static void init(){
+
+    public static void init() {
         // Is a very potent antibacterial
-        Cuproquin = new Material.Builder(25000,"cuprouin")
+        Cuproquin = new Material.Builder(25000, "cuprouin")
                 .fluid()
                 .colorAverage()
                 .iconSet(MaterialIconSet.SHINY)
-                .components(Materials.Carbon,18,
-                        Materials.Hydrogen,18,
-                        Materials.Copper,1,
-                        Materials.Nitrogen,2,
-                        Materials.Oxygen,2)
+                .components(Materials.Carbon, 18,
+                        Materials.Hydrogen, 18,
+                        Materials.Copper, 1,
+                        Materials.Nitrogen, 2,
+                        Materials.Oxygen, 2)
                 .build();
-        Quinoline = new Material.Builder(25001,"quinoline")
+        Quinoline = new Material.Builder(25001, "quinoline")
                 .fluid()
                 .colorAverage()
-                .components(Materials.Carbon,9,
-                        Materials.Hydrogen,7,
-                        Materials.Nitrogen,1)
+                .components(Materials.Carbon, 9,
+                        Materials.Hydrogen, 7,
+                        Materials.Nitrogen, 1)
                 .build();
 
     }

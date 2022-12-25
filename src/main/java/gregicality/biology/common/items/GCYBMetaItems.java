@@ -19,9 +19,9 @@ public class GCYBMetaItems {
     // VR
     public static final MicrobeItem.MicrobeOreValueItem vr_retrovirus = metaMicrobe1.addOreDictItem(100, "retrovirus", 0x964B00, MicrobeItem.SMOOTH_CELL, MicrobeItem.VIRAL);
     // PR
-    public static final MicrobeItem.MicrobeOreValueItem pr_diatom= metaMicrobe1.addOreDictItem(200, "diatom", 0x4FA095, MicrobeItem.SMOOTH_CELL, MicrobeItem.PLASTID); // phytoPlanktons
-    public static final MicrobeItem.MicrobeOreValueItem pr_chlorophyte= metaMicrobe1.addOreDictItem(201, "chlorophyte", 0x4FA095, MicrobeItem.SPIKY_CELL, MicrobeItem.PLASTID); // green algee
-    public static final MicrobeItem.MicrobeOreValueItem pr_euglena= metaMicrobe1.addOreDictItem(202, "euglena", 0x4FA095, MicrobeItem.SPIKY_CELL, MicrobeItem.PLASTID);
+    public static final MicrobeItem.MicrobeOreValueItem pr_diatom = metaMicrobe1.addOreDictItem(200, "diatom", 0x4FA095, MicrobeItem.SMOOTH_CELL, MicrobeItem.PLASTID); // phytoPlanktons
+    public static final MicrobeItem.MicrobeOreValueItem pr_chlorophyte = metaMicrobe1.addOreDictItem(201, "chlorophyte", 0x4FA095, MicrobeItem.SPIKY_CELL, MicrobeItem.PLASTID); // green algee
+    public static final MicrobeItem.MicrobeOreValueItem pr_euglena = metaMicrobe1.addOreDictItem(202, "euglena", 0x4FA095, MicrobeItem.SPIKY_CELL, MicrobeItem.PLASTID);
 
     /* meta_item_1 */
     public static MetaItem<?>.MetaValueItem lam, lammle, lammle_lam;
