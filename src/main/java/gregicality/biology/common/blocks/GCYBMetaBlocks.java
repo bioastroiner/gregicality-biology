@@ -1,6 +1,6 @@
-package gregicality.biology.common.block;
+package gregicality.biology.common.blocks;
 
-import gregicality.biology.common.block.blocks.LabWall;
+import gregicality.biology.common.blocks.LabWall;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

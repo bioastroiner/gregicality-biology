@@ -2,7 +2,6 @@ package gregicality.biology.common;
 
 import gregicality.biology.common.blocks.GCYBMetaBlocks;
 import gregicality.biology.common.items.GCYBMetaItems;
-import gregicality.biology.common.items.MicrobeItem;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -13,6 +12,7 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         GCYBMetaBlocks.registerItemModels();
+        GCYBMetaItems.metaMicrobe1.registerModels();
     }
 
     public void preLoad() {
