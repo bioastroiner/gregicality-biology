@@ -27,7 +27,9 @@ public class LabWall extends VariantBlock<LabWall.LabWallType> {
 
         private final String name;
 
-        LabWallType(String name) {this.name = name;}
+        LabWallType(String name) {
+            this.name = name;
+        }
 
         @Nonnull
         public String getName() {
