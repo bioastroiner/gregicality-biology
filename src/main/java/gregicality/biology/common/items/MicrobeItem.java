@@ -112,14 +112,12 @@ public class MicrobeItem extends StandardMetaItem {
 
     @Override
     public void addInformation(@Nonnull ItemStack itemStack, @Nullable World worldIn, @Nonnull List<String> lines, @Nonnull ITooltipFlag tooltipFlag) {
-        if (ITEMS != null && PROPERTIES != null)
-            for (int i = 0; i < ITEMS.size(); i++) {
-                ItemStack itemStack1 = ITEMS.get(i).getItemStack();
-                lines.add(I18n.format("metaitem.microbe.tier.tooltip") + ": " + PROPERTIES.get(i).tier);
-                lines.add(I18n.format("metaitem.microbe.type.tooltip") + ": ");
-                lines.add(I18n.format("metaitem.microbe.size.tooltip") + ": ");
-                lines.add(I18n.format("metaitem.microbe.note.tooltip") + ": ");
-            }
+        //if (!ITEMS.isEmpty() && !PROPERTIES.isEmpty())
+        MicrobeOreValueItem microbe = ITEMS.get(itemStack.getItemDamage());
+        //lines.add(I18n.format("metaitem.microbe.tier.tooltip") + ": " + PROPERTIES.get(i).tier);
+        lines.add(I18n.format("Scientefic Name") + ": ");
+        lines.add(I18n.format("Size of Cell") + ": ");
+        lines.add(I18n.format("Extras") + ": ");
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
     }
 
