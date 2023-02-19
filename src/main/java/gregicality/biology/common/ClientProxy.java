@@ -12,7 +12,7 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         GCYBMetaBlocks.registerItemModels();
-        GCYBMetaItems.metaMicrobe1.registerModels();
+        GCYBMetaItems.MICROBES.registerModels();
     }
 
     public void preLoad() {

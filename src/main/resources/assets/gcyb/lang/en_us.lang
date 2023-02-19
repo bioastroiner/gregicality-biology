@@ -1,1 +1,6 @@
-metaitem.microbe.tooltip=Tier
+metaitem.microbe.tooltip.tier=Lab Level
+metaitem.microbe.tooltip.name=Full Name
+metaitem.microbe.tooltip.amount=Cells in 1mb
+metaitem.microbe.tooltip.pr=Prod in 100t
+metaitem.microbe.tooltip.rp=reProd in 100t
+metaitem.microbe.tooltip.toxic=Is Toxic?

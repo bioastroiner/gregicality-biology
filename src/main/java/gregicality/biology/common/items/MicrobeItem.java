@@ -29,8 +29,7 @@ import java.util.Map;
 public class MicrobeItem extends StandardMetaItem {
 
     /* General Shape of Microbe */
-    public static final MaterialIconSet SPIKY_CELL = new MaterialIconSet("spiky"); // Rod/Spiral Shaped cell
-    public static final MaterialIconSet SMOOTH_CELL = new MaterialIconSet("smooth"); // Dot Shaped Cell
+    public static final MaterialIconSet CELL_ICON = new MaterialIconSet("cells"); // Rod/Spiral Shaped cell
 
     /* Specific Shape of Microbe */
     public static final OrePrefix SPIRAL = new OrePrefix("spiral", -1L, null, new MaterialIconType("spiral"), 0L, null); // Spiral Shaped cell
@@ -50,7 +49,7 @@ public class MicrobeItem extends StandardMetaItem {
 
     public final Map<String, String> OREDICT_TO_FORMULA = new HashMap();
     private final Map<Short, MicrobeOreValueItem> ITEMS = new HashMap();
-    private final Map<Short, MicrobeProperties> PROPERTIES = new HashMap();
+    private final Map<Short, BioAttributeBuilder> BIO_ATTRIBUTES = new HashMap();
 
     public MicrobeItem(short metaItemOffset) {
         super(metaItemOffset);
@@ -102,6 +101,10 @@ public class MicrobeItem extends StandardMetaItem {
 
     }
 
+    public MicrobeOreValueItem addOreDictItem(int id, String materialName, int rgb, OrePrefix orePrefix) {
+        return this.addOreDictItem((short) id, materialName, rgb, CELL_ICON, orePrefix, "Microbe");
+    }
+
     public MicrobeOreValueItem addOreDictItem(int id, String materialName, int rgb, MaterialIconSet materialIconSet, OrePrefix orePrefix) {
         return this.addOreDictItem((short) id, materialName, rgb, materialIconSet, orePrefix, "Microbe");
     }
@@ -112,13 +115,19 @@ public class MicrobeItem extends StandardMetaItem {
 
     @Override
     public void addInformation(@Nonnull ItemStack itemStack, @Nullable World worldIn, @Nonnull List<String> lines, @Nonnull ITooltipFlag tooltipFlag) {
-        //if (!ITEMS.isEmpty() && !PROPERTIES.isEmpty())
-        MicrobeOreValueItem microbe = ITEMS.get(itemStack.getItemDamage());
-        //lines.add(I18n.format("metaitem.microbe.tier.tooltip") + ": " + PROPERTIES.get(i).tier);
-        lines.add(I18n.format("Scientefic Name") + ": ");
-        lines.add(I18n.format("Size of Cell") + ": ");
-        lines.add(I18n.format("Extras") + ": ");
+        BioAttributeBuilder attr = getMicrobeItemHelper(itemStack).getBioAttributes();
+        lines.add(I18n.format("metaitem.microbe.tooltip.tier") + ": " + attr.getTier());
+        lines.add(I18n.format("metaitem.microbe.tooltip.name") + ": " + attr.getScienteficName());
+        lines.add(I18n.format("metaitem.microbe.tooltip.amount") + ": " + attr.getAmount());
+        lines.add(I18n.format("metaitem.microbe.tooltip.pr") + ": " + attr.getProductionRate());
+        lines.add(I18n.format("metaitem.microbe.tooltip.rp") + ": " + attr.getReproductionRate());
+        lines.add(I18n.format("metaitem.microbe.tooltip.toxic") + ": " + attr.isToxic());
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
+    }
+
+    public MicrobeOreValueItem getMicrobeItemHelper(ItemStack stack) {
+        MicrobeOreValueItem item = this.ITEMS.get((short) stack.getItemDamage());
+        return item;
     }
 
     public class MicrobeOreValueItem {
@@ -189,29 +198,74 @@ public class MicrobeItem extends StandardMetaItem {
             return this.color;
         }
 
-        public MicrobeProperties getMicrobeProperties() {
-            return PROPERTIES.get(this.id);
+        public BioAttributeBuilder getBioAttributes() {
+            return BIO_ATTRIBUTES.get(this.id);
         }
 
-        public MicrobeOreValueItem setMicrobeProperties(int tier) {
-            PROPERTIES.put(this.id, new MicrobeProperties(tier));
+        /**
+         * @param tier             the level of the Microbe determaines the Level of LAB
+         *                         * 1 : safe or low contingency
+         *                         * 2 : known desiese and high contingecy
+         *                         * 3 : very toxic or unknown desieses
+         * @param isToxic          is handling this microbe requires extra caution? the toxicity level depends on tier
+         * @param amount           amounts determine how many cells are in a sample, usually smaller ones have higher amounts,
+         *                         this effects the productivity attribute and the time to reproduce etc.
+         *                         * amount 1 means in 1mb/L exists 1 unit of this cell
+         * @param productionRate   how quickly it will reproduce it gets calculated in recipes,
+         *                         keep in mind viruses don't produce or reproduce but with help of a host cell they do
+         * @param reproductionRate how fast dose it reproduce, the speed gets calculated in recipes, and it's not Certain,
+         *                         keep in mind viruses don't reproduce but this still effects how fast they use their host to do so
+         */
+        public MicrobeOreValueItem builder(int tier, String scienteficName, boolean isToxic, int amount, int productionRate, int reproductionRate) {
+            BIO_ATTRIBUTES.put(this.id, new BioAttributeBuilder(tier, scienteficName, isToxic, amount, productionRate, reproductionRate));
             return this;
         }
     }
 
-    private class MicrobeProperties {
-        /**
-         * @param tier
-         * 1 : safe
-         * 2 : contaigus
-         * 3 : toxic
-         * 4 : hazardous
-         */
-        private final int tier;
-        //private final String leanage;
+    private class BioAttributeBuilder {
 
-        private MicrobeProperties(int tier) {
+        /* FIELDS */
+        private final int tier;
+        private final String scienteficName;
+        private final boolean isToxic;
+        private final int amount;
+
+        private final int productionRate;
+
+        private final int reproductionRate;
+
+        private BioAttributeBuilder(int tier, String scienteficName, Boolean isToxic, int amount, int productionRate, int reproductionRate) {
             this.tier = tier;
+            this.scienteficName = scienteficName;
+            this.isToxic = isToxic;
+            this.amount = amount;
+            this.productionRate = productionRate;
+            this.reproductionRate = reproductionRate;
+        }
+
+        /* GETTERS */
+        public int getTier() {
+            return tier;
+        }
+
+        public String getScienteficName() {
+            return scienteficName;
+        }
+
+        public boolean isToxic() {
+            return isToxic;
+        }
+
+        public int getAmount() {
+            return amount;
+        }
+
+        public int getProductionRate() {
+            return productionRate;
+        }
+
+        public int getReproductionRate() {
+            return reproductionRate;
         }
     }
 }
