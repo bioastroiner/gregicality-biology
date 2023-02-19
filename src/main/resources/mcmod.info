@@ -4,10 +4,10 @@
   "description": "Biological (also scientific) module of Gregicality.",
   "version": "0.0.1-alpha",
   "mcversion": "1.12.2-14.23.5.2847",
-  "logoFile": "assets/gcyb/textures/gcyb_logo.png",
+  "logoFile": "assets/gcyb/textures/gcyb_processor.png",
   "authorList": [
       "BioAstroiner"
   ],
-  "credits": "GregoriusT for making GregTech and textures, various GT community members and the Gregtech CEu Dev Team for help in development.",
+  "credits": "Monstro do extintor#9355 for many and many of the textures",
   "dependencies": ["codechickenlib", "gregtech", "gcym", "gcys"]
 }]
