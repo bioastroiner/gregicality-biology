@@ -24,3 +24,26 @@ the sequence correspond with IRL aminoacids and commands (like start and stop AU
 after you reasearch the desired peptid you need to use PRC (Polymerase Reaction Chain oh boi) and begin duplicating it trough intense heat (PRC is heat resistance) for use in synthesis chamber using Bacterias specialized to produce the peptid that can do the packaging and convert it to usable proteins which you can use in your BioGreenHouses or something haven't decide how you gonna use them yet, probably they gonna stay in microorganism and cultivate there in laminar cultivators, the possibilites are huge
 oh also don't worry you don't have to randomally enter DNA sequences or google them, you can study them by analyzing already in game organisms to aquire and even reverse engeneer some proteins and make better version of them
 
+IDEAS FOR NEURONIC CIRCUITS:
+Mono Synaptic Synthetic Node (ULV), just a connection between 2 neurons
+Simple Synthetic Neural Node (LV), just a connection between sereval neurons, bug's brain
+Synthetic Neural Hub (MV), collection of sereval synapses and cells enclosed in a chip
+Peripheral Synthetic Nervous System (HV), a complex of different hub to make a functioning neural network able to
+control limbs and transmit sensory data
+Central Synthetic Nervous System (EV), a pre Brain
+Reptalian Synthetic Nervous System (IV), a primitive Brain
+Synthetic Neural Cortex (LuV), a primitive Cortex
+Paleomammalian Synthetic Neural Center (ZPM), a Brain capable of Basic Emotions
+Sub Sapient Synthetic Brain (UV), a Human-like Brain yes we are sub"Sapinent"
+Sapient Synthetic Brain (UHV), a truley Sapinet Brain, capable of complex toughts and phelosiphy
+Mainframe Super Computational Brain Cluster (UEV), not "a" Brain nor a true HiveMind but a collection of inferior brains
+put together by a High maintenace Computer controlling and feeding dozens of different minds
+Compact Matrioshka Brain (UIV), Not a real Matrioshka brain! It's an actual brain and is capable of hosting a whole Hive
+mind! But it still has a long way to go, with the power of compact fusion there won't be much problem with calculations
+anymore, except heat! that's a problem
+Primitive Hive Mind (UXV), a whole spicie- No a whole BioSphere worth of Life and Computational capacity, let's bring
+the order of Life to the next level, from prokaryote cells to eukario, to simple tissue to a whole organ to form a
+single unified body, now the next level it's time to unite a whole BioSphere into something Majestic
+The Hive (OpV), a True Hive Mind capable of Incorporating several Planets, Solar Systems or even Galaxies to Unite them
+under one Mind, This project is so Huge we need to use the power of pocket dimensions to encapsulate it
+God (Max), God
